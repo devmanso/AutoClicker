@@ -1,7 +1,17 @@
-#MaxThreadsPerHotkey 3 ; MAKE SURE TO SET THIS TO 3 AND NOTHING ELSE, DO NOT MAKE THAT MISTAKE AGAIN
+;VERSION 1.0.1
+#NoEnv ;reccomended for newer AHK scripts for performance and compatibility with future verisons AHK
+#MaxThreadsPerHotkey 3 ;MAKE SURE TO SET THIS TO 3 AND NOTHING ELSE, DO NOT MAKE THAT MISTAKE AGAIN
+
+SendMode Input ;reccomended for superior speed and relaibility
+SetWorkingDir %A_ScriptDir% ;ensure consistent starting directory
 
 ;ctrl + i = left-click 
 ;ctrl + o = right-click
+;ctrl + alt + s = suspend script
+;ctrl + alt + e = exit script
+
+^!s::ExitApp
+^!e::Suspend 
 
 ^i:: 
 
@@ -24,7 +34,6 @@ Return
 ;return
 
 ^o::
-; similar to the line of code from before this is control + b
 
 RToggle := !RToggle 
 
